@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Builder</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"> 
+  <script src="https://mathscribe.com/clients/mathscribe/mathscribe.min.js"></script>  
+  <link rel="stylesheet" href="css/commonStyles.css">
+  <link rel="stylesheet" href="css/QuizBuilderStyles.css">
+</head>
+
+<body>
+  <!-- ================= NAVIGATION ================= -->
+	<nav class="navbar">
+		<a href="index.html" class="nav-left">
+			<img src="images/logo.png" alt="Logo" class="nav-logo">
+			<span class="nav-title">
+				Hệ Thống Thi Trắc Nghiệm - Bộ Môn Công Nghệ Ô Tô
+			</span>
+		</a>
+		<ul class="nav-right">
+			<li>
+				<a href="https://asciimath.org" class="nav-button active" target="_blank">HELP</a>
+				<a href="#" class="nav-button">Log Out</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div>
+		<!-- ================= MOUDLE INPUT ================= -->
+		<div class="moduleContainer">
+			<div class="module-row">
+				<div class="module-label">MÔN:</div>
+				<select class="clControl clSelect" id="moduleID" style="width:75%">
+				  <option value="1">Vật liệu dùng trong ô tô</option>
+				  <option value="2">Nguyên lý động cơ đốt trong</option>
+				  <option value="3">Lý thuyết ô tô</option>
+				  <option value="4">Kết cấu ô tô</option>
+				  <option value="5">Truyền động thủy lực và khí nén</option>
+				  <option value="6">Năng lượng mới trên ô tô</option>
+				  <option value="7">Tính toán kết cấu ô tô</option>
+				  <option value="8">Kỹ thuật điện tử</option>
+				  <option value="9">Trang bị điện ô tô</option>
+				  <option value="10">Cơ điện tử ô tô</option>
+				  <option value="11">Thiết kế hệ thống cơ điện tử</option>
+				  <option value="12">Chẩn đoán trạng thái kỹ thuật</option>
+				  <option value="13">Ô tô điện (EV)</option>
+				</select>
+			</div>		
+			<!-- <div class="module-row">
+				<div class="module-label">Ngày thi:</div>
+				<input type="date" id="examDate" class="clControl clSelect" style="width:50%;">
+			</div>	 -->	
+			<div class="module-row">
+				<div class="module-label">LOAI ĐỀ:</div>
+				<select class="clControl clSelect" id="examType" style="width:50%">
+				  <option value="1">Kiem tra</option>
+				  <option value="2">Thi cuoi hoc phan</option>
+				</select>
+			</div>	
+			<div class="module-row">
+				<div class="module-label">MA ĐỀ:</div>
+				<textarea class="module-textarea" id="quizSetID" style="width:50%;"></textarea>
+			</div>	
+			
+			<div class="module-row">
+				<button type="button" id="loadDataBtn" class="valid-button" style="--btn-width: 48%;">
+				  <i class="bi bi-download text-white"></i>
+				  Tải đề có sẵn
+				</button>
+				<input type="file" id="jsonFileInput" accept=".json" style="display: none;">		
+				<button type="button" id="exportDataBtn" class="valid-button" style="--btn-width: 55%;">
+				  <i class="bi bi-database-up text-white"></i>
+				  Cap nhat he thong
+				</button>	
+			</div>
+		</div>
+		
+
+		<div class="container">
+			<!-- ================= LEFT PANEL ================= -->
+			<div class="box left-panel">
+				<div class="row">
+					<div class="category-left">
+						<label for="category" class="form-label">Danh mục câu hỏi</label>
+						<select id="category" class="clControl clSelect">
+						  <option value="mcq">Chọn phương án trả lời</option>
+						  <option value="conditional">Phân tích / Tính toán theo bước</option>
+						</select>
+					</div>
+					<div class="category-right">
+						<button type="button" id="saveQuestionBtn" class="valid-button" style="--btn-width:100%;">
+						  <i class="bi bi-arrow-repeat text-white"></i>
+						  Cập nhật câu hỏi
+						</button>
+					</div>
+				</div>			
+
+				<div class="column">
+					<div class="category-left" id="mcqTypeQuestion">
+						<label for="questionType" class="form-label">Loại câu hỏi</label>
+						<select class="clControl clSelect" id="questionType">
+						  <option value="1">Trắc nghiệm một lựa chọn</option>
+						  <option value="2">Chọn hình vẽ / sơ đồ</option>
+						  <option value="3">Ghép hình</option>
+						</select>
+					</div>					
+					<label class="msg-Error" id="msgError"></label>
+					<div id="mcqBody"></div>
+					<div id="conditionalBox"></div>
+				</div>
+			</div>
+
+			<!-- ================= RIGHT PANEL ================= -->
+			<div class="box right-panel">
+				<div class="column">
+					<label class="form-label" style="text-align:center;">Tổng hợp các câu hỏi</label>
+					<label class="form-annotation" style="text-align:center;margin: 2px;">(kéo để sắp xếp)</label>
+					<div class="historyList" id="historyList"></div>
+				</div>
+				<div>
+					<p id="jsonToggle" class="json-toggle" onclick="toggleJsonOutput()">
+						▶ JSON Output
+					</p>
+					<pre id="output" class="hidden" style="color: white; background-color: var(--bgDarkColor);"></pre>
+				</div>
+			</div>
+		</div>	
+	</div>
+		
+		<!-- ================= FOOTER ================= -->
+		<footer class="footer">
+			<div class="footer-center">
+			  © 2026 Automobile Laboratory. All rights reserved.
+			</div>
+		</footer>	
+		
+	<script src="js/QuizBuilderScript.js"></script>
+</body>
+
+</html>

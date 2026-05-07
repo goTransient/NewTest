@@ -1,0 +1,189 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	overflow: hidden;
+	font-family: 'Segoe UI', sans-serif;
+	color: #1f2933;
+    background: linear-gradient(180deg, #0e2333, #0b1b26);
+    padding: 5px;
+   	
+}
+
+.logo {
+    margin-left: 10px;
+	max-height: 8vh;
+	object-fit: contain;	
+}
+.app-name {
+    font-size: 1.5em; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: var(--text-color);
+    margin-right: 20px; /* Adjust the spacing as needed */
+}
+
+.section-style {
+	height: 92vh;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	background-color:#061723;
+	overflow-y: auto;
+}
+.hidden {  display: none; }
+
+#candidate-name::placeholder, #candidate-id::placeholder { color: gray;}
+
+.quiz-header h2 {
+  color: #343a40;
+  text-align: center;
+}
+
+.image-choice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+input {
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.image-choice {
+    flex: 1 1 calc(25% - 1rem); /* Adjust percentage for number of images */
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+	max-width: 300px;
+	max-height: 240px;
+	width: auto;
+	height: auto;
+	display: block;
+	margin-bottom: 5px;
+	cursor: pointer;	
+}
+.image-choice.selected {
+    border-color: #0078D4; /* Highlight color for selected image */
+}
+.image-label {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}
+.quiz-selector-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  appearance: none;
+  color: #333; 
+}
+
+.small-gray-text {
+    color: #6c757d;
+}
+.invalid-quiz-selection {
+    border-color: red;
+    color: red;
+}
+.quiz-selector-button:hover {
+  background-color: #e0e0e0;
+}
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.no-spinner {
+    -moz-appearance: textfield;
+}
+
+/* -------------------------------------------------------------------------------
+Matching choice question */
+.matching-choice-row {    
+    display: flex; /* Optional: helps with layout inside the row */
+    box-sizing: border-box; /* Ensures padding/border don't exceed 100% */	
+	justify-content: space-around;
+}
+.row-1 {
+	width:100%;
+}
+.row-2 {
+	width:100%;
+}
+.sortable-list {
+	flex: 1; 
+    list-style-type: none;  /* remove bullet points */
+    display: flex;              /* Horizontal layout for list items */
+    flex-direction: row;
+	justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.sortable-list li {
+    display: flex;               /* Enables flexbox on the item */
+    flex: 1;
+    box-sizing: border-box;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 10px;
+    justify-content: center;     /* Horizontal centering */
+    align-items: center;         /* Vertical centering */
+    cursor: move;
+    user-select: none;
+} 
+
+.dragClone-button {
+	position: absolute;
+	color: #0d6efd; /* Bootstrap primary color */
+	border: 1px solid #0d6efd;
+	background-color: transparent; 
+	padding: 0.375rem 0.75rem;
+	border-radius: 0.375rem;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+	z-index: 1000;
+	display: none;	
+}
+.dragClone-button:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+
+
+/* -------------------------------------------------------------------------------
+Question Introduction */
+.question-intro {
+    text-align: left;
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #000000; 	
+}
+.question-image {
+	max-width: 120px;
+	max-height: 120px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+.question-text {
+    margin-bottom: 1rem;
+	text-align: left;
+    font-size: 1rem;
+    color: #222;	
+}

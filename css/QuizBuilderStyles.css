@@ -1,0 +1,372 @@
+.clControl {
+  width: 100%;
+  padding: 7px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: var(--bgDarkColor);
+  color: var(--txtColor);
+  border: 1px solid #555;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 12px;
+}
+.clControl::placeholder {
+  font-style:italic;
+  font-size:10px;
+}
+.clSelect {
+  appearance: auto;
+}
+.hidden {
+  display: none !important;
+}
+.image-area{
+  width: 100%;
+  height: 36px;
+  line-height: 36px;          /* vertical centering */
+  padding: 0 12px;
+  resize: none;
+  cursor: pointer;
+  font-style:italic;
+  font-size:10px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px dashed #4b5563;
+
+  background-color: #1f2933;
+  color: #e5e7eb;
+  font-family: inherit;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* Placeholder style */
+.image-area::placeholder {
+  color: #9ca3af;
+}
+/* Hover feedback */
+.image-area:hover {
+  border-color: #38bdf8;
+  background-color: #243444;
+}
+/* Focus (click feedback) */
+.image-area:focus {
+  outline: none;
+  border-color: #38bdf8;
+}
+/* When file name is filled */
+.image-area:not(:placeholder-shown) {
+  border-style: solid;
+  color: #38bdf8;
+  font-weight: 500;
+}
+.preview-image {
+  max-width: 120px;
+  max-height: 120px;
+  object-fit: contain;
+  display: none;
+  border-radius: 4px;
+  border: 1px solid #374151;
+}
+
+
+
+/* ===== Course Name / Input ===== */
+.moduleContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin:30px 35px 20px 30px; 
+}
+.module-label {
+  font-size: 18px;
+  font-weight: bold; 
+  line-height: 1.5;
+  color:white;
+  text-align: left; 
+}
+.module-row {
+  display: flex;
+  align-items: flex-end;
+  width:100%;
+  gap: 10px;
+}
+.module-textarea {
+  height: 32px;        /* fixed height */
+  line-height: 30px;  /* same as height ✅ */
+  padding-left: 7px;
+  resize: none;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: var(--bgDarkColor);
+  color: var(--txtColor);  
+  font-family: var(--txtFontFamily); 
+  overflow: hidden; /* ✅ hide scrollbar */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  font-family: var(--txtFontFamily);
+  filter: invert(35%) sepia(90%) saturate(2500%) hue-rotate(210deg);
+}
+
+/* ===== Main Two-Column Layout =================================== */
+.container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+.box {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.left-panel {  
+	flex: 2;
+}
+.right-panel {
+  flex: 1; /* 33% width */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-right: 40px;
+}
+/* valid CSS selector */
+.right-panel > div {
+  width: 100%;
+}
+/* Optional: keep history visually dominant */
+.right-panel .historyList {
+  flex-grow: 1;
+}
+
+#loadDataBtn, #saveQuestionBtn, #updateDatabaseBtn{
+  margin-left: auto; /* ✅ pushes button to the right */
+}
+
+/* ===== Caterogies, Types of questions ============================= */
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  width: 100%;
+  padding-bottom:20px; 
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch; 
+  padding-right:20px;
+  width: 100%;
+}
+.category-left {
+  flex: 0 0 78%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.category-right {
+  flex: 2;
+}
+
+.form-label {
+  font-weight: bold;
+  color: white;
+  margin-top: 5px; 
+}
+
+.msg-Error {
+  font-weight: normal;
+  font-style: italic;
+  color: red; 
+  font-size:12px; 
+  margin:0;
+}
+
+
+.form-annotation {
+  font-weight: normal;
+  color: var(--txtColor);
+  font-style:italic;
+  font-size:12px; 
+  margin-top: 5px; 
+}
+
+.form-label2 {
+  font-weight: bold;
+  color: white;
+  margin-top: 5px; 
+  font-size: 14px; 
+}
+
+
+/* ===== MCQ dynamic content ===== */
+.mcqContainer {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  width: 100%;  
+  align-items: stretch; 
+  box-sizing: border-box;
+}
+/* Textarea (quizIntro) */
+.quizIntro {
+  width: 100%;
+  min-height: 60px;
+  padding: 8px;
+  font-size: 12px;
+  resize: vertical;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: var(--bgDarkColor);
+  color: var(--txtColor);
+  font-family: Arial, sans-serif;
+  margin-top:7px; 
+}
+.quizIntro::placeholder {
+  font-style:italic;
+  font-size:10px;
+}
+.optionContainer {
+  display: flex;
+  width:100%;
+  gap: 12px;
+  box-sizing: border-box;
+}
+.option {
+  flex: 1;               /* equal width for A, B, C, D */
+  display: flex;
+  flex-direction: column;  
+  margin-top:10px;
+  gap:7px;
+}
+.option-label {
+  font-weight: normal; 
+  color: white; 
+  font-size:14px;
+  padding-left:5px;
+}
+#jsonToggle {
+  font-size: 14px;      /* adjust as needed */
+  text-align: left;     /* optional: align text left */
+}
+
+/* ===== History Panel ===== */
+.historyList {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--bgDarkColor);
+  height: 30vh;
+  overflow-y: auto;
+}
+.history-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: white;
+  font-size:12px; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.history-item:hover {
+  background: var(--bgMainColor);
+}
+.history-left {
+  flex: 1; 
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  opacity: 0.7;
+}
+.delete-btn:hover {
+  background: var(--txtColor);
+}
+.history-actions {
+  display: flex;
+  gap: 6px;
+}
+.edit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.edit-btn:hover {
+  background: var(--txtColor);
+}
+
+
+
+/* ===== Tab Panel =================================== */
+.tab-headers {
+  display: flex;
+  border-bottom: 1px solid #374151;
+  background-color: #111827;
+  border-radius: 6px;
+}
+.tab-header {
+  padding: 5px 10px;
+  cursor: pointer;
+  background: linear-gradient(#2b3640, #1f2933);
+  color: #9ca3af;
+  border-right: 1px solid #374151;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  border-bottom: 3px solid transparent;
+}
+.tab-header:hover {
+  color: #e5e7eb;
+  background-color: #1f2933;
+}
+.tab-header.active {
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 3px solid #38bdf8; /* accent */
+}
+.tab-group {
+  margin-top:10px; 
+  background-color: #1f2933;
+  border-radius: 6px;
+  border: 1px solid #374151;
+}
+.tab-pane {
+  display: none;
+  padding: 16px;
+}
+.tab-pane.active {
+  display: block;
+}
+
+
+.mathscribe,
+math {
+  font-size: 110%;
+}
+
+.options math {
+  display: inline-block;
+  vertical-align: middle;
+}

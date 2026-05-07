@@ -1,0 +1,196 @@
+/* ========== RESET ========== */
+
+
+/* Page wrapper */
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main content grows to push footer down */
+.page main {
+    flex: 1;
+}
+
+/* ========== PAGE ========== */
+
+
+
+
+/* ================= CONTAINER ================= */
+.container {
+    padding: 10px 48px 10px 32px;
+}
+
+/* ================= MODULE ================= */
+.module {
+    margin-bottom: 40px;
+}
+
+/* Header */
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+/* Number circle */
+.module-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    color: #0b1f2a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title + icon */
+.module-info {
+    flex: 1;
+}
+
+.module-info p {
+	color: white;
+	font-size:12px;
+	padding-top:10px;
+}
+
+.module-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.module-title-row h2 {
+    font-size: 18px;
+    color: white;
+}
+
+/* Toggle icon */
+.module-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    padding: 0;
+}
+
+/* .module-toggle i {
+    transition: transform 0.3s ease;
+}
+.module.collapsed .module-toggle i {
+    transform: rotate(-90deg);
+} */
+
+/* Header separator line */
+.module-line {
+    position: absolute;
+    bottom: -12px;
+    left: 52px;
+    width: calc(100% - 52px);
+    height: 2px;
+    background: rgba(255,255,255,0.8);
+}
+
+/* ================= COLLAPSE / EXPAND ================= */
+/* Expanded state (default) */
+.module-content {
+    margin-left: 52px;
+    margin-top: 30px;
+    overflow: hidden;
+
+    /* Animation */
+/*     max-height: 1000px;
+    opacity: 1;
+    transition:
+        max-height 0.45s ease,
+        opacity 0.25s ease,
+        margin-top 0.3s ease; */
+}
+
+/* Collapsed state */
+/* .module.collapsed .module-content {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+} */
+
+/* ================= CARD GRID ================= */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/* ================= CARD ================= */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.image-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.card-footer a {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.no-test {
+    color: #999;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+
+/* ================= IMAGE CLASSES ================= */
+.imgMaterialCourse {
+    content: url("https://plus.unsplash.com/premium_photo-1675501130430-e60f929f995f?w=764&q=80&auto=format&fit=crop");
+}
+
+.imgAICourse {
+    content: url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1600&q=80");
+}
+
+.imgProgrammingCourse {
+    content: url("https://plus.unsplash.com/premium_photo-1661877737564-3dfd7282efcb?q=80&w=1200&auto=format&fit=crop");
+}
+
+.imgCarDesignCourse {
+    content: url("https://plus.unsplash.com/premium_photo-1737597230774-db90d2539f79?q=80&w=1332&auto=format&fit=crop");
+}
+
+.imgCarDiagnosticCourse {
+    content: url("https://plus.unsplash.com/premium_photo-1661434904969-d3ca36791fb4?q=80&w=687&auto=format&fit=crop");
+}
+
+.imgEngineCourse {
+    content: url("https://images.unsplash.com/photo-1527383418406-f85a3b146499?q=80&w=1170&auto=format&fit=crop");
+}
+.imgMechatronicsCourse {
+    content: url("https://images.unsplash.com/photo-1582297649766-c07106890cea?w=1169&q=80&auto=format&fit=crop");
+}
+
+
+

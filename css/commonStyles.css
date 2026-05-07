@@ -1,0 +1,111 @@
+:root {
+  --bgMainColor: #1f2933;
+  --bgDarkColor: #0b1f2a;
+  --txtColor: rgba(150, 150, 150,1);
+  --txtFontFamily: Arial, sans-serif;
+}
+
+/* Make page take full screen height */
+html, body {
+	font-family: var(--txtFontFamily); 
+  
+}
+
+body {
+    background: linear-gradient(180deg, #0e2333, #0b1b26);
+    padding: 0px;
+	margin: 0;
+    color: var(--bgMainColor);
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bgDarkColor); 
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+	text-decoration: none;
+	color: inherit;	
+}
+.nav-logo {
+    height: 50px;
+}
+
+.nav-title {
+    color: white;
+    font-size: 12px;
+}
+
+.nav-right {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+.nav-button {
+    padding: 8px 18px;
+    text-decoration: none;
+    color: #e5f6ff;
+    font-size: 14px;
+    border-radius: 10px;
+    transition: background 0.25s;
+}
+.nav-button:hover,
+.nav-button.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+
+.valid-button {
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3ec5ff, #0f5fa5);
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: var(--btn-width, auto);
+  position: relative;
+  box-shadow:
+    0 3px 0 #0b4b85,
+    0 10px 20px rgba(0,0,0,0.35);
+}
+.valid-button,
+.valid-button:hover,
+.valid-button:focus,
+.valid-button:focus-visible,
+.valid-button:active {
+  background: linear-gradient(135deg, #3ec5ff, #0f5fa5);
+  color: white;
+}
+.valid-button:active {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 #0b4b85,
+    0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: var(--bgDarkColor);
+    padding: 20px 0px 0px 0px; 
+	margin:0;
+    display: flex;
+    justify-content: center;
+}
+.footer-center {
+    color: GrayText;
+    font-size: 12px;
+}
